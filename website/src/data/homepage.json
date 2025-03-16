@@ -1,0 +1,30 @@
+{
+  "heroTitle": "Handcrafted Wood Furniture",
+  "heroSubtitle": "Custom pieces made with traditional woodworking techniques",
+  "heroImage": "/img/hero-workshop.jpg",
+  "heroButtonText": "View Our Collection",
+  "heroButtonLink": "/products",
+  "features": [
+    {
+      "title": "Custom Furniture",
+      "description": "Each piece is handcrafted to your specifications, using the finest hardwoods and traditional joinery techniques that will last for generations.",
+      "image": "/img/custom-furniture.jpg",
+      "buttonText": "Request a Quote",
+      "buttonLink": "/contact"
+    },
+    {
+      "title": "Woodworking Classes",
+      "description": "Learn the art of woodworking in our beginner-friendly workshops. From basic skills to advanced joinery, our master craftsmen will guide you through creating your own pieces.",
+      "image": "/img/woodworking-class.jpg",
+      "buttonText": "View Classes",
+      "buttonLink": "/classes"
+    },
+    {
+      "title": "Restoration Services",
+      "description": "Bring new life to your treasured wooden heirlooms. Our restoration experts can repair, refinish, and revitalize antique furniture while preserving its character and history.",
+      "image": "/img/restoration.jpg",
+      "buttonText": "Learn More",
+      "buttonLink": "/restoration"
+    }
+  ]
+} 

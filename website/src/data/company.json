@@ -1,0 +1,18 @@
+{
+  "name": "Welldonewood",
+  "tagline": "Fine woodworking craftsmanship",
+  "description": "Welldonewood creates handcrafted, custom wood furniture and home decor items using traditional woodworking techniques. Each piece is made with care to bring the natural beauty of wood into your home.",
+  "phone": "(555) 123-4567",
+  "email": "info@welldonewood.com",
+  "address": {
+    "street": "123 Woodcraft Lane",
+    "city": "Timber Creek",
+    "state": "OR",
+    "zip": "97123"
+  },
+  "social": {
+    "facebook": "https://facebook.com/welldonewood",
+    "linkedin": "https://linkedin.com/company/welldonewood",
+    "pinterest": ""
+  }
+} 

@@ -1,0 +1,141 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# These lines should match your site structure
+media_folder: "static/img" # Media files will be stored in the repo under static/img
+public_folder: "/img" # The src attribute for uploaded media will begin with /img
+
+# Enable the Netlify editorial workflow
+# This adds an interface for drafting, reviewing, and approving posts
+publish_mode: editorial_workflow
+
+# Site URL for creating absolute URLs
+site_url: https://welldonewood.com
+
+# Collections define the structure for the different content types
+collections:
+  - name: "product" # Used in routes, e.g., /admin/collections/product
+    label: "Product" # Used in the UI
+    folder: "website/src/products" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product ID", name: "productId", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Price", name: "price", widget: "number", value_type: "float"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - label: "Wood Type"
+        name: "woodType"
+        widget: "select"
+        options:
+          - { label: "Oak", value: "oak" }
+          - { label: "Walnut", value: "walnut" }
+          - { label: "Maple", value: "maple" }
+          - { label: "Cherry", value: "cherry" }
+          - { label: "Pine", value: "pine" }
+          - { label: "Mixed", value: "mixed" }
+      - {label: "Dimensions", name: "dimensions", widget: "string", required: false}
+      - {label: "Weight (lbs)", name: "weight", widget: "number", required: false}
+      - {label: "In Stock", name: "inStock", widget: "boolean", default: true}
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Order", name: "order", widget: "number", default: 999, required: false}
+
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "website/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Author Title", name: "author_title", widget: "string", required: false}
+      - {label: "Author URL", name: "author_url", widget: "string", required: false}
+      - {label: "Author Image", name: "author_image_url", widget: "image", required: false}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "testimonial"
+    label: "Testimonial"
+    folder: "website/src/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Customer Name", name: "title", widget: "string"}
+      - {label: "Customer Location", name: "location", widget: "string"}
+      - {label: "Rating", name: "rating", widget: "number", min: 1, max: 5, value_type: "int"}
+      - {label: "Testimonial Text", name: "body", widget: "markdown"}
+      - {label: "Customer Image", name: "image", widget: "image", required: false}
+      - {label: "Product Purchased", name: "product", widget: "string", required: false}
+      - {label: "Display Order", name: "order", widget: "number", default: 999, required: false}
+
+  - name: "page"
+    label: "Page"
+    folder: "website/src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Hide Title", name: "hide_title", widget: "boolean", default: false, required: false}
+      - {label: "Hide Table of Contents", name: "hide_table_of_contents", widget: "boolean", default: false, required: false}
+
+  # Settings for the homepage and key site information
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Company Information"
+        name: "company"
+        file: "website/src/data/company.json"
+        fields:
+          - {label: "Company Name", name: "name", widget: "string", default: "Welldonewood"}
+          - {label: "Tagline", name: "tagline", widget: "string", default: "Fine woodworking craftsmanship"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - {label: "Street", name: "street", widget: "string"}
+              - {label: "City", name: "city", widget: "string"}
+              - {label: "State", name: "state", widget: "string"}
+              - {label: "Zip", name: "zip", widget: "string"}
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "Facebook", name: "facebook", widget: "string", required: false}
+              - {label: "Instagram", name: "instagram", widget: "string", required: false}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Pinterest", name: "pinterest", widget: "string", required: false}
+      
+      - label: "Homepage"
+        name: "homepage"
+        file: "website/src/data/homepage.json"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Subtitle", name: "heroSubtitle", widget: "string"}
+          - {label: "Hero Image", name: "heroImage", widget: "image"}
+          - {label: "Hero Button Text", name: "heroButtonText", widget: "string"}
+          - {label: "Hero Button Link", name: "heroButtonLink", widget: "string"}
+          - label: "Feature Sections"
+            name: "features"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Button Text", name: "buttonText", widget: "string", required: false}
+              - {label: "Button Link", name: "buttonLink", widget: "string", required: false} 
