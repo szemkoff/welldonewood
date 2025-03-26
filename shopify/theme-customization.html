@@ -1,0 +1,9 @@
+---
+layout: default
+title: Welldonewood Theme Customization
+---
+
+<div id="content">
+  {% capture md_content %}{% include_relative theme-customization.md %}{% endcapture %}
+  {{ md_content | markdownify }}
+</div> 

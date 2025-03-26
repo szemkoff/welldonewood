@@ -1,0 +1,9 @@
+---
+layout: default
+title: HubSpot Email Templates
+---
+
+<div id="content">
+  {% capture md_content %}{% include_relative email-templates.md %}{% endcapture %}
+  {{ md_content | markdownify }}
+</div> 
