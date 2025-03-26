@@ -1,3 +1,8 @@
+---
+layout: default
+title: Shopify Implementation for Welldonewood
+---
+
 # Shopify Implementation for Welldonewood
 
 This document outlines the Shopify implementation for the Welldonewood e-commerce platform.

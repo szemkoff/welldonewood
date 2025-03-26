@@ -1,3 +1,8 @@
+---
+layout: default
+title: Page Templates
+---
+
 # Page Templates
 
 This document outlines the standard page templates for the Welldonewood Shopify store.

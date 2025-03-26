@@ -1,3 +1,8 @@
+---
+layout: default
+title: Website Architecture for Welldonewood
+---
+
 # Welldonewood Website Architecture
 
 This document outlines the architecture and structure of the Welldonewood e-commerce website, based on industry best practices and competitor analysis.

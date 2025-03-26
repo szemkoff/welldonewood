@@ -1,3 +1,8 @@
+---
+layout: default
+title: Collection Structure
+---
+
 # Collection Structure
 
 This document outlines the collection hierarchy and organization for the Welldonewood Shopify store.

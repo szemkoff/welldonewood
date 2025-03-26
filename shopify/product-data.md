@@ -1,3 +1,8 @@
+---
+layout: default
+title: Product Data Structure
+---
+
 # Product Data Structure
 
 This document defines the standard data structure for products in the Welldonewood Shopify store.
