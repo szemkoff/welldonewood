@@ -1,3 +1,8 @@
+---
+layout: default
+title: Email Campaign Templates
+---
+
 # Email Campaign Templates
 
 This document outlines the standard email templates and campaign structures for Welldonewood's HubSpot marketing automation.

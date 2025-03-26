@@ -1,3 +1,8 @@
+---
+layout: default
+title: Product Import Process
+---
+
 # Product Import Process
 
 This document outlines the process for importing and managing product data in the Welldonewood Shopify store.

@@ -1,3 +1,8 @@
+---
+layout: default
+title: HubSpot Integration for Welldonewood
+---
+
 # HubSpot Integration for Welldonewood
 
 This document outlines the HubSpot integration for the Welldonewood marketing automation and CRM.

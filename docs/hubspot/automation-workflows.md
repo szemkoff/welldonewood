@@ -1,3 +1,8 @@
+---
+layout: default
+title: Automation Workflows
+---
+
 # Automation Workflows
 
 This document outlines the standard automation workflows implemented in HubSpot for Welldonewood's marketing and sales processes.

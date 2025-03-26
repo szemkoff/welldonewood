@@ -1,3 +1,8 @@
+---
+layout: default
+title: Theme Customization
+---
+
 # Theme Customization
 
 This document outlines the theme customization approach for the Welldonewood Shopify store, detailing the selected theme, customization requirements, and implementation guidelines.
