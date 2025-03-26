@@ -1,0 +1,10 @@
+---
+layout: default
+title: Welldonewood Documentation
+redirect_from: /
+---
+
+<div id="readme-content">
+  {% capture readme_content %}{% include_relative README.md %}{% endcapture %}
+  {{ readme_content | markdownify }}
+</div> 
