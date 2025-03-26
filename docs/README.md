@@ -16,6 +16,7 @@ Welcome to the comprehensive documentation for Welldonewood, a company specializ
   * [Page Templates](./shopify/page-templates)
   * [Product Data Structure](./shopify/product-data)
   * [Theme Customization](./shopify/theme-customization)
+  * [Product Cloning Guide](./shopify/product-cloning)
 
 ### Marketing & CRM
 

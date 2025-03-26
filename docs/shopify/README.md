@@ -19,7 +19,8 @@ This document outlines the Shopify implementation for the Welldonewood e-commerc
 2. **[Collection Structure](./collections.md)**: Organization of product collections
 3. **[Page Templates](./page-templates.md)**: Templates for different page types
 4. **[Theme Customization](./theme-customization.md)**: Theme modification details
-5. **[Third-Party Integrations](./integrations.md)**: External service connections
+5. **[Product Cloning Guide](./product-cloning.md)**: Guide for importing products from other websites
+6. **[Third-Party Integrations](./integrations.md)**: External service connections
 
 ## Product Import Process
 
