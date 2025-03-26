@@ -1,0 +1,9 @@
+---
+layout: default
+title: Welldonewood Collections Structure
+---
+
+<div id="content">
+  {% capture md_content %}{% include_relative collections.md %}{% endcapture %}
+  {{ md_content | markdownify }}
+</div> 

@@ -11,21 +11,21 @@ Welcome to the comprehensive documentation for Welldonewood, a company specializ
 
 ### E-commerce Platform
 
-* [**Shopify Implementation**](./shopify/README.md)
-  * [Collection Structure](./shopify/collections.md)
-  * [Page Templates](./shopify/page-templates.md)
-  * [Product Data Structure](./shopify/product-data.md)
-  * [Theme Customization](./shopify/theme-customization.md)
+* [**Shopify Implementation**](./shopify/)
+  * [Collection Structure](./shopify/collections)
+  * [Page Templates](./shopify/page-templates)
+  * [Product Data Structure](./shopify/product-data)
+  * [Theme Customization](./shopify/theme-customization)
 
 ### Marketing & CRM
 
-* [**HubSpot Implementation**](./hubspot/README.md)
-  * [Email Campaign Templates](./hubspot/email-templates.md)
-  * [Automation Workflows](./hubspot/automation-workflows.md)
+* [**HubSpot Implementation**](./hubspot/)
+  * [Email Campaign Templates](./hubspot/email-templates)
+  * [Automation Workflows](./hubspot/automation-workflows)
 
 ### Technical Design
 
-* [**Website Architecture**](./architecture/README.md)
+* [**Website Architecture**](./architecture/)
 
 ## System Overview
 
@@ -67,7 +67,7 @@ flowchart TD
 
 ## Getting Started
 
-For developers new to the project, start by reviewing the [Website Architecture](./architecture/README.md) and [Shopify Implementation](./shopify/README.md) documentation.
+For developers new to the project, start by reviewing the [Website Architecture](./architecture/) and [Shopify Implementation](./shopify/) documentation.
 
 ## Documentation Structure
 

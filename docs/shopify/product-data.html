@@ -1,0 +1,9 @@
+---
+layout: default
+title: Welldonewood Product Data Structure
+---
+
+<div id="content">
+  {% capture md_content %}{% include_relative product-data.md %}{% endcapture %}
+  {{ md_content | markdownify }}
+</div> 

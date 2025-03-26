@@ -1,0 +1,9 @@
+---
+layout: default
+title: Welldonewood Page Templates
+---
+
+<div id="content">
+  {% capture md_content %}{% include_relative page-templates.md %}{% endcapture %}
+  {{ md_content | markdownify }}
+</div> 
