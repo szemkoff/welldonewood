@@ -1,0 +1,6 @@
+name: Welldonewood Documentation
+title: Welldonewood Documentation
+description: Technical documentation for Welldonewood e-commerce platform
+baseurl: "/welldonewood"
+url: "https://szemkoff.github.io"
+markdown: GFM 

@@ -1,3 +1,8 @@
+---
+layout: default
+title: Welldonewood Documentation
+---
+
 # Welldonewood Documentation
 
 Welcome to the comprehensive documentation for Welldonewood, a company specializing in thermally modified wood products.
