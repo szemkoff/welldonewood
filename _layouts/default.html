@@ -4,73 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        pre {
-            background-color: #f6f8fa;
-            border-radius: 3px;
-            padding: 16px;
-            overflow: auto;
-        }
-        code {
-            background-color: rgba(27,31,35,0.05);
-            border-radius: 3px;
-            padding: 0.2em 0.4em;
-            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-        }
-        img {
-            max-width: 100%;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #dfe2e5;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-        }
-        th {
-            background-color: #f6f8fa;
-        }
-        tr:nth-child(even) {
-            background-color: #f8f8f8;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .mermaid {
-            margin-bottom: 20px;
-        }
-        .header-nav {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eaecef;
-        }
-        .footer {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eaecef;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #6a737d;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 <body>
     <div class="header-nav">
@@ -88,33 +22,38 @@
         &copy; 2023 Welldonewood. All rights reserved.
     </div>
 
-    <!-- Mermaid.js for diagram rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.5.0/dist/mermaid.min.js"></script>
+    <!-- Include Mermaid directly from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
     <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose'
+        });
+        
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize mermaid with better settings
-            mermaid.initialize({
-                startOnLoad: true,
-                theme: 'default',
-                flowchart: { useMaxWidth: true, htmlLabels: true },
-                securityLevel: 'loose'
+            // Convert Markdown code blocks to Mermaid diagrams
+            document.querySelectorAll('pre > code').forEach(function(codeBlock) {
+                // Check if this is a Mermaid code block
+                if (codeBlock.textContent.trim().startsWith('flowchart') || 
+                    codeBlock.textContent.trim().startsWith('sequenceDiagram') ||
+                    codeBlock.textContent.trim().startsWith('classDiagram') ||
+                    codeBlock.textContent.trim().startsWith('gantt') ||
+                    codeBlock.textContent.trim().startsWith('pie')) {
+                    
+                    // Create a div with class 'mermaid'
+                    var mermaidDiv = document.createElement('div');
+                    mermaidDiv.className = 'mermaid';
+                    mermaidDiv.textContent = codeBlock.textContent;
+                    
+                    // Replace the code block with the mermaid div
+                    var preElement = codeBlock.parentElement;
+                    preElement.parentElement.replaceChild(mermaidDiv, preElement);
+                }
             });
             
-            // Find all pre code blocks with mermaid class
-            document.querySelectorAll('pre code.language-mermaid').forEach(function(codeBlock) {
-                // Create a new div with class 'mermaid'
-                var mermaidDiv = document.createElement('div');
-                mermaidDiv.className = 'mermaid';
-                
-                // Set the text content from the code block
-                mermaidDiv.textContent = codeBlock.textContent;
-                
-                // Replace the code block with the mermaid div
-                var preElement = codeBlock.parentElement;
-                preElement.parentElement.replaceChild(mermaidDiv, preElement);
-            });
-            
-            // Force mermaid to process diagrams
+            // Re-process all mermaid diagrams
             mermaid.init(undefined, '.mermaid');
         });
     </script>

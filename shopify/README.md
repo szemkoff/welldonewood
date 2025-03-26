@@ -25,7 +25,7 @@ This document outlines the Shopify implementation for the Welldonewood e-commerc
 
 The process for importing products into the Welldonewood Shopify store follows these key steps:
 
-```mermaid
+```
 flowchart TD
     A[Data Preparation] --> B[Import Method Selection]
     B --> C[Import Execution]

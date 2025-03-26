@@ -11,7 +11,7 @@ This document outlines the HubSpot integration for the Welldonewood marketing au
 
 HubSpot serves as the marketing automation and customer relationship management (CRM) platform for Welldonewood, integrated with our Shopify e-commerce store.
 
-```mermaid
+```
 flowchart TD
     A[Shopify Store] --> B[Customer Data]
     A --> C[Order Data]
@@ -31,7 +31,7 @@ flowchart TD
 
 HubSpot workflows enable automated marketing, sales, and service processes based on triggers and actions. Welldonewood implements the following core workflow types:
 
-```mermaid
+```
 flowchart TD
     A[Triggers] --> B[Actions]
     B --> C[Goals]
