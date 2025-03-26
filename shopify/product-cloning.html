@@ -4,6 +4,290 @@ title: Product Cloning Guide
 ---
 
 <div id="content">
-  {% capture md_content %}{% include_relative product-cloning-guide.md %}{% endcapture %}
-  {{ md_content | markdownify }}
+  <h1>Cloning Products from Another Website to Shopify</h1>
+
+  <p>This guide provides a comprehensive approach to cloning products from another website and importing them into your Welldonewood Shopify store.</p>
+
+  <h2>Legal Considerations</h2>
+
+  <p>Before beginning any data collection from another website, consider these important legal points:</p>
+
+  <ol>
+    <li><strong>Copyright and Intellectual Property</strong>: Product descriptions, images, and other content may be protected by copyright laws.</li>
+    <li><strong>Terms of Service</strong>: Most websites prohibit scraping in their terms of service.</li>
+    <li><strong>Proper Use</strong>: This guide is intended for legitimate purposes such as:
+      <ul>
+        <li>Migrating your own products from one platform to another</li>
+        <li>Creating product listings with proper permission</li>
+        <li>Educational purposes to understand e-commerce data structures</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><strong>Always seek legal advice and obtain proper permissions before copying content from another website.</strong></p>
+
+  <h2>Process Overview</h2>
+
+  <p>The product cloning process involves these key stages:</p>
+
+  <pre>
+PRODUCT CLONING WORKFLOW
+├── Planning & Preparation
+│   ├── Target Website Analysis
+│   ├── Data Requirements Definition
+│   ├── Tool Selection
+│   └── Legal Considerations
+│
+├── Data Collection
+│   ├── Manual Collection
+│   ├── Automated Scraping
+│   └── Data Validation
+│
+├── Data Transformation
+│   ├── Shopify Format Conversion
+│   ├── Image Processing
+│   └── Enrichment
+│
+└── Shopify Import
+    ├── Test Import
+    ├── Validation
+    └── Production Import
+  </pre>
+
+  <h2>1. Planning & Preparation</h2>
+
+  <h3>Target Website Analysis</h3>
+
+  <p>Analyze the structure of the source website:</p>
+
+  <ul>
+    <li>How products are categorized and organized</li>
+    <li>What data elements are available (titles, descriptions, variants, etc.)</li>
+    <li>How product images are stored and displayed</li>
+    <li>Whether pricing information is readily accessible</li>
+  </ul>
+
+  <h3>Data Requirements Definition</h3>
+
+  <p>Define what data you need to collect for each product:</p>
+
+  <ul>
+    <li><strong>Essential Fields</strong>: Title, description, price, images, variants</li>
+    <li><strong>Optional Fields</strong>: Tags, categories, specs, dimensions, materials</li>
+    <li><strong>Custom Fields</strong>: Any special attributes for your specific product type</li>
+  </ul>
+
+  <h3>Tool Selection</h3>
+
+  <p>Choose appropriate tools based on your technical skills and the complexity of the task:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Best For</th>
+        <th>Skills Required</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Manual Copy</td>
+        <td>Small number of products (1-10)</td>
+        <td>None</td>
+        <td>Time-consuming but simple</td>
+      </tr>
+      <tr>
+        <td>Spreadsheet Export/Import</td>
+        <td>Medium number of products (10-100)</td>
+        <td>Basic spreadsheet</td>
+        <td>If source allows data export</td>
+      </tr>
+      <tr>
+        <td>Web Scraping</td>
+        <td>Large number of products (100+)</td>
+        <td>Programming (Python)</td>
+        <td>Requires technical knowledge</td>
+      </tr>
+      <tr>
+        <td>Third-party Service</td>
+        <td>Any scale</td>
+        <td>Varies</td>
+        <td>Paid services available</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Data Collection</h2>
+
+  <h3>Manual Collection Method</h3>
+
+  <p>For a small number of products, manual collection is straightforward:</p>
+
+  <ol>
+    <li>Create a spreadsheet with Shopify's required columns (refer to <a href="https://help.shopify.com/en/manual/products/import-export/import-products">Shopify's import template</a>)</li>
+    <li>Browse the source website and copy product data into your spreadsheet</li>
+    <li>Download product images and store them with organized filenames</li>
+    <li>Review collected data for accuracy and completeness</li>
+  </ol>
+
+  <h3>Automated Scraping Method</h3>
+
+  <p>For larger product catalogs, use the provided Python script:</p>
+
+  <ol>
+    <li>Install required packages:
+      <pre>pip install requests beautifulsoup4</pre>
+    </li>
+    <li>Customize the script for the target website:
+      <ul>
+        <li>Update CSS selectors in the script to match the source website's HTML structure</li>
+        <li>Test with a small number of products first</li>
+        <li>Adjust delay parameters to be respectful of the source server</li>
+      </ul>
+    </li>
+    <li>Run the script:
+      <pre>python product-scraper.py https://example.com/products/</pre>
+    </li>
+    <li>Review the output CSV file and downloaded images</li>
+  </ol>
+
+  <h2>3. Data Transformation</h2>
+
+  <p>After collecting the raw data, transform it to match Shopify's requirements:</p>
+
+  <h3>Image Processing</h3>
+
+  <ol>
+    <li>Resize images to Shopify's recommended dimensions (2048px × 2048px)</li>
+    <li>Optimize images for web (JPG or WebP format)</li>
+    <li>Upload images to a publicly accessible location (e.g., CDN, Dropbox public link)</li>
+    <li>Update CSV with correct image URLs</li>
+  </ol>
+
+  <h3>Data Enrichment</h3>
+
+  <p>Enhance your product data to maximize its value in your store:</p>
+
+  <ol>
+    <li><strong>Standardize Product Types and Vendors</strong>: Ensure consistency</li>
+    <li><strong>Enhance SEO</strong>: Improve titles and descriptions with relevant keywords</li>
+    <li><strong>Add Metafields</strong>: For additional product specifications</li>
+    <li><strong>Categorize Products</strong>: Plan your collection structure</li>
+  </ol>
+
+  <h3>CSV Cleaning</h3>
+
+  <p>Prepare your CSV file for import:</p>
+
+  <ol>
+    <li>Validate required fields are present</li>
+    <li>Check for formatting issues (commas, quotes, HTML tags)</li>
+    <li>Convert pricing to the correct format (no currency symbols)</li>
+    <li>Remove any problematic characters</li>
+  </ol>
+
+  <h2>4. Shopify Import</h2>
+
+  <h3>Test Import</h3>
+
+  <p>Before importing all products:</p>
+
+  <ol>
+    <li>Select a small subset of products (2-3) for testing</li>
+    <li>Create a test CSV with just these products</li>
+    <li>Import via Shopify Admin: Products > Import</li>
+    <li>Review the imported products for accuracy</li>
+  </ol>
+
+  <h3>Bulk Import</h3>
+
+  <p>Once testing is successful:</p>
+
+  <ol>
+    <li>Go to Shopify Admin > Products > Import</li>
+    <li>Upload your prepared CSV file</li>
+    <li>Review and approve the import</li>
+    <li>Monitor progress (larger imports may take time)</li>
+  </ol>
+
+  <h3>Post-Import Tasks</h3>
+
+  <p>After importing products, complete these essential tasks:</p>
+
+  <ol>
+    <li><strong>Review Each Product</strong>: Check for any formatting or data issues</li>
+    <li><strong>Organize Products</strong>: Add to collections</li>
+    <li><strong>Set Up Product Options</strong>: Configure variant settings</li>
+    <li><strong>Enable Inventory Tracking</strong>: Set inventory policies</li>
+    <li><strong>Test the Shopping Experience</strong>: Make a test purchase</li>
+  </ol>
+
+  <h2>Troubleshooting Common Issues</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Issue</th>
+        <th>Possible Solution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Images not showing</td>
+        <td>Check image URLs are publicly accessible</td>
+      </tr>
+      <tr>
+        <td>Variants not importing</td>
+        <td>Verify CSV structure has correct variant format</td>
+      </tr>
+      <tr>
+        <td>Missing data</td>
+        <td>Check if source fields were properly mapped to Shopify fields</td>
+      </tr>
+      <tr>
+        <td>HTML formatting issues</td>
+        <td>Ensure HTML tags are properly closed and formatted</td>
+      </tr>
+      <tr>
+        <td>Import errors</td>
+        <td>Check Shopify's error log for specific issues</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Tools and Resources</h2>
+
+  <ul>
+    <li><strong>Web Scraping Tools</strong>:
+      <ul>
+        <li><a href="https://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> (Python library)</li>
+        <li><a href="https://scrapy.org/">Scrapy</a> (Python framework)</li>
+        <li><a href="https://www.octoparse.com/">Octoparse</a> (Visual scraper, no coding)</li>
+        <li><a href="https://www.import.io/">Import-io</a> (Commercial data extraction)</li>
+      </ul>
+    </li>
+    <li><strong>Image Processing</strong>:
+      <ul>
+        <li><a href="https://bulkresizephotos.com/">Bulk Resize Photos</a> (Online tool)</li>
+        <li><a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a> (Professional editing)</li>
+      </ul>
+    </li>
+    <li><strong>Shopify Resources</strong>:
+      <ul>
+        <li><a href="https://help.shopify.com/en/manual/products/import-export/import-products">Product CSV Format</a></li>
+        <li><a href="https://shopify.dev/docs/admin-api">Shopify API References</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Expert Tips</h2>
+
+  <ol>
+    <li><strong>Maintain SEO Value</strong>: When migrating products, preserve URLs and metadata</li>
+    <li><strong>Add Redirects</strong>: Set up redirects from old product URLs to new ones</li>
+    <li><strong>Enrich Data</strong>: Use the migration as an opportunity to improve product information</li>
+    <li><strong>Set Realistic Timelines</strong>: Large catalogs take time to properly migrate</li>
+    <li><strong>Focus on Best Sellers</strong>: Start with your most important products for quick wins</li>
+  </ol>
 </div> 
