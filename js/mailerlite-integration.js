@@ -1,3 +1,0 @@
-/**
- * MailerLite Integration for Welldonewood
- */
