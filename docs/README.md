@@ -1,14 +1,30 @@
-# Welldonewood Technical Documentation
+# Welldonewood Documentation
 
-This repository contains the technical documentation for the Welldonewood e-commerce platform, which specializes in thermally modified wood products.
+Welcome to the comprehensive documentation for Welldonewood, a company specializing in thermally modified wood products.
 
-## Core Systems
+## Documentation Sections
 
-- **[Shopify](./shopify/README.md)**: E-commerce platform for product catalog and sales
-- **[HubSpot](./hubspot/README.md)**: Marketing automation and CRM
-- **[Website Architecture](./architecture/README.md)**: Site structure and design documentation
+### E-commerce Platform
+
+* [**Shopify Implementation**](./shopify/README.md)
+  * [Collection Structure](./shopify/collections.md)
+  * [Page Templates](./shopify/page-templates.md)
+  * [Product Data Structure](./shopify/product-data.md)
+  * [Theme Customization](./shopify/theme-customization.md)
+
+### Marketing & CRM
+
+* [**HubSpot Implementation**](./hubspot/README.md)
+  * [Email Campaign Templates](./hubspot/email-templates.md)
+  * [Automation Workflows](./hubspot/automation-workflows.md)
+
+### Technical Design
+
+* [**Website Architecture**](./architecture/README.md)
 
 ## System Overview
+
+The Welldonewood platform integrates several systems to provide a complete e-commerce and marketing solution:
 
 ```mermaid
 flowchart TD
@@ -33,31 +49,6 @@ flowchart TD
 - Thermo-treated Fencing
 - Interior Wood Products
 - Specialty Products (Plywood, RollFloor)
-
-## Technology Stack
-
-- **E-commerce**: Shopify
-- **CRM & Marketing**: HubSpot
-- **Deployment**: Netlify/GitHub
-- **Frontend**: Shopify Liquid Templating
-
-## Documentation Organization
-
-The documentation is organized into these key areas:
-
-1. **Shopify Implementation**
-   - [Shopify Overview](./shopify/README.md) - Implementation details and store configuration
-   - [Collection Structure](./shopify/collections.md) - Product collection organization
-   - [Page Templates](./shopify/page-templates.md) - Standard page layouts
-   - [Product Data](./shopify/product-data.md) - Product information structure
-   - [Theme Customization](./shopify/theme-customization.md) - Theme design and modifications
-
-2. **HubSpot Implementation**
-   - [HubSpot Overview](./hubspot/README.md) - Integration and automation details
-   - [Email Templates](./hubspot/email-templates.md) - Standard email campaign formats
-
-3. **Architecture Documentation**
-   - [Architecture Overview](./architecture/README.md) - Site structure and technical design
 
 ## Implementation Status
 
